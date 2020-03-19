@@ -1,0 +1,23 @@
+<%-include("header")-%>
+
+<div class="box" id="heading">
+	<h1 >Today is <%= kindofday %>   </h1>
+</div>
+	<div class="box">
+		
+	
+		<% for ( var i=0; i< newtasks.length; i++){ %>
+		<div class="item">
+		<input type="checkbox">
+		<p><%= newtasks[i]%></p>
+	    </div>
+	<% }%>
+	
+<form method="post" action="/" class="item">
+	<button type="submit" name="list" value="clearall" class="clr">C</button>
+	<input type="text" name="task" placeholder="New Item" autocomplete="off">
+	<button type="submit" name="list" class="add" value=<%= kindofday %>  >+</button>
+</form>
+</div>
+
+<%- include("footer") -%>
